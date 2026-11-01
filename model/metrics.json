@@ -1,0 +1,303 @@
+{
+  "dataset": "Predict Students' Dropout and Academic Success (UCI id 697)",
+  "split": {
+    "test_size": 0.2,
+    "random_state": 42,
+    "stratify": true,
+    "train_rows": 3539,
+    "test_rows": 885
+  },
+  "class_counts": {
+    "Dropout": 1421,
+    "Graduate": 2209,
+    "Enrolled": 794
+  },
+  "metric_definitions": {
+    "precision_recall_f1": "weighted",
+    "auc": "weighted one-vs-rest",
+    "mcc": "multiclass Matthews correlation coefficient"
+  },
+  "models": {
+    "Logistic Regression": {
+      "file": "logistic_regression.joblib",
+      "params": {
+        "solver": "lbfgs",
+        "max_iter": 2000,
+        "class_weight": "balanced"
+      },
+      "accuracy": 0.7254,
+      "auc": 0.8967,
+      "precision": 0.7652,
+      "recall": 0.7254,
+      "f1": 0.7384,
+      "mcc": 0.5745,
+      "per_class": {
+        "Dropout": {
+          "precision": 0.8178,
+          "recall": 0.6796,
+          "f1": 0.7423,
+          "support": 284
+        },
+        "Enrolled": {
+          "precision": 0.4156,
+          "recall": 0.6352,
+          "f1": 0.5025,
+          "support": 159
+        },
+        "Graduate": {
+          "precision": 0.8571,
+          "recall": 0.7873,
+          "f1": 0.8208,
+          "support": 442
+        }
+      },
+      "confusion_matrix": [
+        [
+          193,
+          65,
+          26
+        ],
+        [
+          26,
+          101,
+          32
+        ],
+        [
+          17,
+          77,
+          348
+        ]
+      ],
+      "confusion_labels": [
+        "Dropout",
+        "Enrolled",
+        "Graduate"
+      ]
+    },
+    "Decision Tree": {
+      "file": "decision_tree.joblib",
+      "params": {
+        "chosen": {
+          "classifier__max_depth": 8
+        },
+        "train_cv_f1_weighted": 0.7172
+      },
+      "accuracy": 0.661,
+      "auc": 0.8223,
+      "precision": 0.7425,
+      "recall": 0.661,
+      "f1": 0.6837,
+      "mcc": 0.4973,
+      "per_class": {
+        "Dropout": {
+          "precision": 0.8235,
+          "recall": 0.5915,
+          "f1": 0.6885,
+          "support": 284
+        },
+        "Enrolled": {
+          "precision": 0.3442,
+          "recall": 0.6667,
+          "f1": 0.454,
+          "support": 159
+        },
+        "Graduate": {
+          "precision": 0.8338,
+          "recall": 0.7036,
+          "f1": 0.7632,
+          "support": 442
+        }
+      },
+      "confusion_matrix": [
+        [
+          168,
+          88,
+          28
+        ],
+        [
+          19,
+          106,
+          34
+        ],
+        [
+          17,
+          114,
+          311
+        ]
+      ],
+      "confusion_labels": [
+        "Dropout",
+        "Enrolled",
+        "Graduate"
+      ]
+    },
+    "KNN": {
+      "file": "knn.joblib",
+      "params": {
+        "chosen": {
+          "classifier__n_neighbors": 11
+        },
+        "train_cv_f1_weighted": 0.6898
+      },
+      "accuracy": 0.7085,
+      "auc": 0.8464,
+      "precision": 0.6932,
+      "recall": 0.7085,
+      "f1": 0.6825,
+      "mcc": 0.5116,
+      "per_class": {
+        "Dropout": {
+          "precision": 0.7773,
+          "recall": 0.6268,
+          "f1": 0.694,
+          "support": 284
+        },
+        "Enrolled": {
+          "precision": 0.5,
+          "recall": 0.239,
+          "f1": 0.3234,
+          "support": 159
+        },
+        "Graduate": {
+          "precision": 0.7086,
+          "recall": 0.9299,
+          "f1": 0.8043,
+          "support": 442
+        }
+      },
+      "confusion_matrix": [
+        [
+          178,
+          27,
+          79
+        ],
+        [
+          31,
+          38,
+          90
+        ],
+        [
+          20,
+          11,
+          411
+        ]
+      ],
+      "confusion_labels": [
+        "Dropout",
+        "Enrolled",
+        "Graduate"
+      ]
+    },
+    "Naive Bayes": {
+      "file": "naive_bayes.joblib",
+      "params": {
+        "variant": "GaussianNB",
+        "priors": "equal"
+      },
+      "accuracy": 0.2441,
+      "auc": 0.7005,
+      "precision": 0.5531,
+      "recall": 0.2441,
+      "f1": 0.1675,
+      "mcc": 0.1242,
+      "per_class": {
+        "Dropout": {
+          "precision": 0.5758,
+          "recall": 0.2007,
+          "f1": 0.2977,
+          "support": 284
+        },
+        "Enrolled": {
+          "precision": 0.1969,
+          "recall": 0.9623,
+          "f1": 0.3269,
+          "support": 159
+        },
+        "Graduate": {
+          "precision": 0.6667,
+          "recall": 0.0136,
+          "f1": 0.0266,
+          "support": 442
+        }
+      },
+      "confusion_matrix": [
+        [
+          57,
+          225,
+          2
+        ],
+        [
+          5,
+          153,
+          1
+        ],
+        [
+          37,
+          399,
+          6
+        ]
+      ],
+      "confusion_labels": [
+        "Dropout",
+        "Enrolled",
+        "Graduate"
+      ]
+    },
+    "Support Vector Machine": {
+      "file": "svm.joblib",
+      "params": {
+        "kernel": "rbf",
+        "probability": true,
+        "class_weight": "balanced"
+      },
+      "accuracy": 0.7277,
+      "auc": 0.9016,
+      "precision": 0.7595,
+      "recall": 0.7277,
+      "f1": 0.7382,
+      "mcc": 0.5723,
+      "per_class": {
+        "Dropout": {
+          "precision": 0.8248,
+          "recall": 0.6796,
+          "f1": 0.7452,
+          "support": 284
+        },
+        "Enrolled": {
+          "precision": 0.4211,
+          "recall": 0.6038,
+          "f1": 0.4961,
+          "support": 159
+        },
+        "Graduate": {
+          "precision": 0.8392,
+          "recall": 0.8032,
+          "f1": 0.8208,
+          "support": 442
+        }
+      },
+      "confusion_matrix": [
+        [
+          193,
+          60,
+          31
+        ],
+        [
+          26,
+          96,
+          37
+        ],
+        [
+          15,
+          72,
+          355
+        ]
+      ],
+      "confusion_labels": [
+        "Dropout",
+        "Enrolled",
+        "Graduate"
+      ]
+    }
+  }
+}
