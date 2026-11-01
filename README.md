@@ -12,7 +12,7 @@ The target has three classes. Graduate is about half the students (2,209), Dropo
 
 ## c. Github Repository Link
 
-https://github.com/<your-username>/<your-repo>
+[https://github.com/C0D3-BR3AK3R/BITS-AIML-MTech-ML-Assignment-2-2026](https://github.com/C0D3-BR3AK3R/BITS-AIML-MTech-ML-Assignment-2-2026)
 
 ## d. Models used
 
